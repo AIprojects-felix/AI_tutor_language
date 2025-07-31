@@ -1,0 +1,74 @@
+# Model configuration file
+
+# Base model configuration
+base_model:
+  name: "microsoft/Phi-4-multimodal-instruct"
+  revision: "main"
+  trust_remote_code: true
+  use_auth_token: false
+
+# Tokenizer configuration
+tokenizer:
+  padding_side: "left"
+  truncation_side: "right"
+  model_max_length: 2048
+  special_tokens:
+    - "[ENGLISH]"
+    - "[GERMAN]"
+    - "[COMPARE]"
+    - "[GRAMMAR]"
+    - "[VOCAB]"
+    - "[FEEDBACK]"
+    - "[AUDIO]"
+    - "[EXPLAIN]"
+
+# Generation configuration
+generation:
+  max_new_tokens: 512
+  temperature: 0.7
+  top_p: 0.9
+  top_k: 50
+  do_sample: true
+  num_beams: 1
+  repetition_penalty: 1.1
+  
+# LoRA configuration (for efficient fine-tuning)
+lora:
+  use_lora: true
+  r: 16
+  lora_alpha: 32
+  lora_dropout: 0.05
+  target_modules:
+    - "q_proj"
+    - "v_proj"
+    - "k_proj"
+    - "o_proj"
+    - "gate_proj"
+    - "up_proj"
+    - "down_proj"
+  modules_to_save:
+    - "embed_tokens"
+    - "lm_head"
+
+# Quantization configuration
+quantization:
+  load_in_8bit: false
+  load_in_4bit: true
+  bnb_4bit_compute_dtype: "float16"
+  bnb_4bit_quant_type: "nf4"
+  bnb_4bit_use_double_quant: true
+
+# Audio processing configuration
+audio:
+  sample_rate: 16000
+  n_mels: 80
+  hop_length: 160
+  win_length: 400
+  n_fft: 512
+  
+# Multimodal configuration
+multimodal:
+  vision_enabled: false
+  audio_enabled: true
+  max_audio_length: 30  # 秒
+  audio_encoder: "whisper-base"
