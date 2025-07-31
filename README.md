@@ -359,16 +359,8 @@ We welcome contributions! Please follow these steps:
 4. Push to the branch
 5. Create a Pull Request
 
-## 📄 License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## 📞 Contact
-
-For questions or suggestions, please contact:
-
-- Email: your.email@example.com
-- Project Homepage: https://github.com/your-username/ai-tutor-training
 
 ## 🙏 Acknowledgments
 
@@ -379,19 +371,7 @@ Thanks to the following projects and resources:
 - PyTorch Team
 - All contributors
 
-## 🔖 Citation
 
-If this project helps your research, please cite:
-
-```bibtex
-@misc{ai_tutor_2024,
-  title={AI Tutor for Cross-Linguistic Language Learning: Training Framework},
-  author={Your Name},
-  year={2024},
-  publisher={Your Institution},
-  url={https://github.com/your-username/ai-tutor-training}
-}
-```
 
 ---
 
